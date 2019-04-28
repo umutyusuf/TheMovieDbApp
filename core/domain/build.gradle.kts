@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(Modules.CORE_DATA))
+    api(project(Modules.CORE_DATA))
 
     testImplementation(Testing.JUNIT)
     testImplementation(Testing.TEST_RUNNER)

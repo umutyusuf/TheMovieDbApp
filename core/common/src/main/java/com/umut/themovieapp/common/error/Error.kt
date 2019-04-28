@@ -1,6 +1,6 @@
 package com.umut.themovieapp.common.error
 
-import com.umut.themovieapp.common.text.TextValue
+import com.umut.themovieapp.common.message.TextValue
 
 data class Error(val errorCode: Int? = null, val textValue: TextValue?) {
     companion object {

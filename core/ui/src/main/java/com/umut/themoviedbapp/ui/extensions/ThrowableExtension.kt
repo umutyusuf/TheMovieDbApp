@@ -2,7 +2,7 @@ package com.umut.themoviedbapp.ui.extensions
 
 import com.umut.themovieapp.common.error.CoreAppException
 import com.umut.themovieapp.common.error.Error
-import com.umut.themovieapp.common.text.TextValue
+import com.umut.themovieapp.common.message.TextValue
 import com.umut.themoviedbapp.ui.R
 
 fun Throwable.getError(): Error =

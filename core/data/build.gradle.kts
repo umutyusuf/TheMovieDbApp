@@ -8,9 +8,10 @@ repositories {
 
 dependencies {
     api(project(Modules.CORE_COMMON))
-    implementation(Networking.RETROFIT_GSON_CONVERTER)
-    implementation(Networking.RETROFIT)
-    implementation(Networking.RETROFIT_RX_JAVA)
-    implementation(Networking.OKHTTP_INTERCEPTOR)
-    implementation(Networking.OKHTTP)
+
+    api(Networking.RETROFIT_GSON_CONVERTER)
+    api(Networking.RETROFIT)
+    api(Networking.RETROFIT_RX_JAVA)
+    api(Networking.OKHTTP_INTERCEPTOR)
+    api(Networking.OKHTTP)
 }

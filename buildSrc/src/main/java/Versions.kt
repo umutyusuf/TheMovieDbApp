@@ -33,4 +33,9 @@ object Versions {
     object Dagger {
         const val DAGGER = "2.22.1"
     }
+
+    object Rx {
+        const val RX_KOTLIN = "2.3.0"
+        const val RX_ANDROID = "2.1.0"
+    }
 }

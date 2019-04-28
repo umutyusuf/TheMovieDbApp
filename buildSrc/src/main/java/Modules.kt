@@ -1,6 +1,6 @@
 object Modules {
     private const val CORE = ":core"
-    private const val POPULAR_SHOWS = ":shows"
+    private const val TV_SHOWS = ":tv_shows"
 
     /**
      * App
@@ -21,9 +21,9 @@ object Modules {
     /**
      * Popular Shows
      */
-    const val POPULAR_SHOWS_DATA = "$POPULAR_SHOWS:data"
-    const val POPULAR_SHOWS_DOMAIN = "$POPULAR_SHOWS:domain"
-    const val POPULAR_SHOWS_UI = "$POPULAR_SHOWS:ui"
+    const val TV_SHOWS_DATA = "$TV_SHOWS:data"
+    const val TV_SHOWS_DOMAIN = "$TV_SHOWS:domain"
+    const val TV_SHOWS_UI = "$TV_SHOWS:ui"
 
     // endregion
 }

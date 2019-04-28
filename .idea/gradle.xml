@@ -15,8 +15,10 @@
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/domain" />
             <option value="$PROJECT_DIR$/core/ui" />
-            <option value="$PROJECT_DIR$/shows" />
-            <option value="$PROJECT_DIR$/shows/data" />
+            <option value="$PROJECT_DIR$/tv_shows" />
+            <option value="$PROJECT_DIR$/tv_shows/data" />
+            <option value="$PROJECT_DIR$/tv_shows/domain" />
+            <option value="$PROJECT_DIR$/tv_shows/ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

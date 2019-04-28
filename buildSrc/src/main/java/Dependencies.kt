@@ -31,3 +31,8 @@ object Dagger {
     const val DAGGER_ANDROID_PROCESSOR = "com.google.dagger:dagger-android-processor:${Versions.Dagger.DAGGER}"
 }
 
+object Rx {
+    const val RX_KOTLIN = "io.reactivex.rxjava2:rxkotlin:${Versions.Rx.RX_KOTLIN}"
+    const val RX_ANDROID = "io.reactivex.rxjava2:rxandroid:${Versions.Rx.RX_ANDROID}"
+}
+
