@@ -19,3 +19,7 @@ allprojects {
 }
 
 tasks.register("clean", Delete::class.java)
+
+repositories {
+    mavenCentral()
+}
