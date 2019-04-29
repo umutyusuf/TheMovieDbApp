@@ -14,6 +14,4 @@ interface ErrorFactory {
 
     fun populateError(t: Throwable) : Error
 
-    fun populateEmptyResponseError(): Error
-
 }

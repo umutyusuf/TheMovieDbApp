@@ -55,6 +55,5 @@ class PopularTvShowsUseCaseTest {
             .test()
             .assertSubscribed()
             .assertFailure(CoreAppException::class.java)
-            .awaitTerminalEvent()
     }
 }

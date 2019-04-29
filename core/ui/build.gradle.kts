@@ -10,5 +10,5 @@ repositories {
 }
 
 dependencies {
-    api(project(Modules.CORE_COMMON))
+    api(project(Modules.CORE_DOMAIN))
 }
