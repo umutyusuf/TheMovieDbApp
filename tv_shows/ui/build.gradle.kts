@@ -2,7 +2,7 @@ plugins {
     id(Plugins.ANDROID_LIBRARY)
 }
 apply {
-    from("$rootDir/android-library.gradle")
+    from("$rootDir/android-common.gradle")
 }
 
 repositories {
@@ -12,4 +12,5 @@ repositories {
 dependencies {
     api(project(Modules.CORE_UI))
     api(project(Modules.TV_SHOWS_DOMAIN))
+
 }

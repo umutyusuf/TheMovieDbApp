@@ -16,10 +16,11 @@ object Versions {
 
     object Testing {
         const val JUNIT = "1.1.0"
-        const val TEST_CORE = "1.1.0"
         const val ESPRESSO_CORE = "3.1.1"
+        const val ESPRESSO_INTENTS = "3.0.2"
         const val TEST_RUNNER = "1.1.1"
         const val TEST_RULES = "1.1.1"
+        const val MOCKITO = "2.27.0"
     }
 
     object Networking {

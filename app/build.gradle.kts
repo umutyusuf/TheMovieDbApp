@@ -1,41 +1,17 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-android-extensions")
+    id(Plugins.ANDROID_APPLICATION)
 }
-
-android {
-    compileSdkVersion(Versions.COMPILE_SDK)
-
-    defaultConfig {
-        applicationId = Configurations.APPLICATION_ID
-        minSdkVersion(Versions.MIN_SDK)
-        targetSdkVersion(Versions.TARGET_SDK)
-        versionCode = Configurations.VERSION_CODE
-        versionName = Configurations.VERSION_NAME
-        testInstrumentationRunner = Configurations.INSTRUMENTATION_RUNNER_NAME
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-        }
-
-        getByName("debug") {
-            isMinifyEnabled = false
-        }
-    }
-
+apply {
+    from("$rootDir/android-common.gradle")
 }
 
 dependencies {
-    implementation(CommonLibraries.KOTLIN_STD_LIB)
-    implementation(Support.APP_COMPAT)
+    implementation(project(Modules.TV_SHOWS_UI))
 
     testImplementation(Testing.JUNIT)
 
     androidTestImplementation(Testing.ESPRESSO_CORE)
+    androidTestImplementation(Testing.ESPRESSO_INTENTS)
     androidTestImplementation(Testing.TEST_RUNNER)
     androidTestImplementation(Testing.TEST_RULES)
 }

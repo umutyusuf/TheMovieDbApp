@@ -2,7 +2,7 @@ plugins {
     id(Plugins.ANDROID_LIBRARY)
 }
 apply {
-    from("$rootDir/android-library.gradle")
+    from("$rootDir/android-common.gradle")
 }
 
 repositories {

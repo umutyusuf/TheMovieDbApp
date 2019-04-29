@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.umut.themoviedbapp">
+    <application>
+        <activity android:name=".tv_shows_ui.SingleFragmentActivity"
+                  android:theme="@style/Theme.AppCompat.Light"/>
+    </application>
+</manifest>

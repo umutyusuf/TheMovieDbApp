@@ -10,10 +10,13 @@ object Support {
 
 object Testing {
     const val JUNIT = "androidx.test.ext:junit:${Versions.Testing.JUNIT}"
-    const val TEST_CORE = "androidx.test:core:${Versions.Testing.TEST_RUNNER}"
     const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.Testing.ESPRESSO_CORE}"
+    const val ESPRESSO_INTENTS = "com.android.support.test.espresso:espresso-intents:${Versions.Testing.ESPRESSO_INTENTS}"
     const val TEST_RUNNER = "androidx.test:runner:${Versions.Testing.TEST_RUNNER}"
     const val TEST_RULES = "androidx.test:rules:${Versions.Testing.TEST_RULES}"
+    const val MOCKITO_ANDROID = "org.mockito:mockito-android:${Versions.Testing.MOCKITO}"
+    const val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.Testing.MOCKITO}"
+    const val TEST_DATA_BINDING =  "androidx.databinding:databinding-compiler:${Versions.ANDROID_PLUGIN}"
 }
 
 object Networking {

@@ -9,4 +9,8 @@ class PopularTvShowsFragment : BaseFragment<PopularTvShowsViewModel, FragmentPop
     PopularTvShowsViewModel::class.java
 ) {
 
+    companion object {
+        fun newInstance() = PopularTvShowsFragment()
+    }
+
 }

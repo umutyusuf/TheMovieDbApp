@@ -1,0 +1,68 @@
+// Unable to use kts due to an issue with dynamic library loading for kotlin
+// https://github.com/gradle/kotlin-dsl/issues/1287
+// Issue is closed but no clear explanation how to proceed.
+// Suggested approach also fails
+
+apply plugin: Plugins.KOTLIN_ANDROID
+apply plugin: Plugins.KOTLIN_ANDROID_EXT
+apply plugin: Plugins.KOTLIN_KAPT
+
+android {
+    compileSdkVersion Versions.COMPILE_SDK
+
+    defaultConfig {
+        minSdkVersion Versions.MIN_SDK
+        targetSdkVersion Versions.TARGET_SDK
+
+        versionCode Configurations.VERSION_CODE
+        versionName Configurations.VERSION_NAME
+
+        testInstrumentationRunner Configurations.INSTRUMENTATION_RUNNER_NAME
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            multiDexEnabled true
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    packagingOptions {
+        exclude 'META-INF/domain.kotlin_module'
+        exclude 'META-INF/data.kotlin_module'
+        exclude 'META-INF/ui_debug.kotlin_module'
+    }
+
+}
+
+dependencies {
+
+    api(CommonLibraries.KOTLIN_STD_LIB)
+
+    api(Support.LIFECYCLE_EXTENSIONS)
+    api(Support.APP_COMPAT)
+
+    // region dagger
+    api(Dagger.DAGGER)
+    kapt(Dagger.DAGGER_COMPILER)
+    kapt(Dagger.DAGGER_ANDROID_PROCESSOR)
+    // endregion
+
+    // region testing
+    androidTestImplementation(Testing.MOCKITO_ANDROID)
+    androidTestImplementation(Testing.ESPRESSO_CORE)
+    androidTestImplementation(Testing.TEST_RUNNER)
+    androidTestImplementation(Testing.TEST_RULES)
+
+    kaptAndroidTest(Testing.TEST_DATA_BINDING)
+    // endregion
+
+}
+

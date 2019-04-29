@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.VisibleForTesting
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -19,12 +20,14 @@ abstract class BaseFragment<VM : ViewModel, B : ViewDataBinding>(
     private val layoutRestId: Int?, private val modelClass: Class<VM>
 ) : Fragment() {
 
+    @VisibleForTesting
     @Inject
-    internal lateinit var vmFactory: ViewModelProvider.Factory
+    lateinit var vmFactory: ViewModelProvider.Factory
 
-    internal lateinit var viewModel: VM
+    @VisibleForTesting
+    lateinit var viewModel: VM
 
-    internal lateinit var binding: B
+    lateinit var binding: B
 
     override fun onCreate(savedInstanceState: Bundle?) {
         if (activity is HasSupportFragmentInjector) {

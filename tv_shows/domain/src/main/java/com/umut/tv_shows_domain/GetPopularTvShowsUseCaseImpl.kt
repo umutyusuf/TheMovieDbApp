@@ -15,7 +15,8 @@ import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-private const val MAX_PAGE_COUNT = 1000
+
+const val MAX_PAGE_COUNT = 1000
 
 class GetPopularTvShowsUseCaseImpl @Inject
 constructor(
