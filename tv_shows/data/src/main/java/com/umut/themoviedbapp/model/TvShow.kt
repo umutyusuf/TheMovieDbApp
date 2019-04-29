@@ -6,7 +6,7 @@ data class TvShow(
     @SerializedName("id") val id: Long?,
     @SerializedName("original_name") val originalName: String?,
     @SerializedName("genre_ids") val genreIds: List<Long>?,
-    @SerializedName("name") val name: List<Long>?,
+    @SerializedName("name") val name: String?,
     @SerializedName("popularity") val popularity: Double?,
     @SerializedName("origin_country") val originCountry: List<String>?,
     @SerializedName("vote_count") val coteCount: Long?,

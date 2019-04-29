@@ -32,7 +32,7 @@ class RequestInterceptor(
         return url.newBuilder()
             .addQueryParameter(QUERY_PARAM_API_KEY, apiKey)
             .addQueryParameter(QUERY_PARAM_LOCALE, localeProvider.getLocale())
-            .build();
+            .build()
     }
 
 }

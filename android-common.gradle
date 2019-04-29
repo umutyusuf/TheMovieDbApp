@@ -31,9 +31,15 @@ android {
             multiDexEnabled true
         }
     }
+
     dataBinding {
         enabled = true
     }
+
+    androidExtensions {
+        experimental = true
+    }
+
     packagingOptions {
         exclude 'META-INF/domain.kotlin_module'
         exclude 'META-INF/data.kotlin_module'
@@ -48,6 +54,9 @@ dependencies {
 
     api(Support.LIFECYCLE_EXTENSIONS)
     api(Support.APP_COMPAT)
+
+    api(Rx.RX_ANDROID)
+    api(Rx.RX_KOTLIN)
 
     // region dagger
     api(Dagger.DAGGER)

@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    api(project(Modules.CORE_DOMAIN))
+    implementation(project(Modules.CORE_DOMAIN))
     api(project(Modules.TV_SHOWS_DATA))
 
     testImplementation(Testing.JUNIT)
