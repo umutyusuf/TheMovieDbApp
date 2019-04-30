@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TvShowItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxHeight">@dimen/item_max_height</item>
+    </style>
+
+    <style name="TvShowItem.ImageView">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_height">@dimen/item_max_height</item>
+    </style>
+
+    <style name="TvShowItem.SubTitle">
+        <item name="android:background">@color/darkBackground</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/size_normal</item>
+    </style>
+</resources>

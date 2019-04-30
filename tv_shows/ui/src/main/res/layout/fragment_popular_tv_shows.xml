@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="vertical"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-        <TextView
-                android:id="@+id/helloWorldTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/hello_world"/>
+    <data>
 
-    </LinearLayout>
+        <variable
+            name="resource"
+            type="com.umut.themovieapp.common.model.Resource" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/popularTvShowsFragmentRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resourceState="@{resource}">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popularTvShowsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_popular_tv_show" />
+
+        <ProgressBar
+            android:id="@+id/popularShowsProgressBar"
+            style="@style/BaseProgressBar"
+            android:visibility="@{resource}" />
+    </FrameLayout>
+
 </layout>

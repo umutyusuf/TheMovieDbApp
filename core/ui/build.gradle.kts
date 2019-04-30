@@ -11,4 +11,5 @@ repositories {
 
 dependencies {
     api(project(Modules.CORE_DOMAIN))
+    api(Support.RECYCLER_VIEW)
 }

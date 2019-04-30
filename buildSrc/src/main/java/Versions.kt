@@ -10,7 +10,7 @@ object Versions {
     }
 
     object Support {
-        const val APP_COMPAT = "1.0.0"
+        const val ANDROID_X = "1.0.0"
         const val LIFECYCLE_EXTENSIONS = "2.0.0"
     }
 
@@ -38,5 +38,9 @@ object Versions {
     object Rx {
         const val RX_KOTLIN = "2.3.0"
         const val RX_ANDROID = "2.1.0"
+    }
+
+    object UI {
+        const val PICASSO = "2.71828"
     }
 }

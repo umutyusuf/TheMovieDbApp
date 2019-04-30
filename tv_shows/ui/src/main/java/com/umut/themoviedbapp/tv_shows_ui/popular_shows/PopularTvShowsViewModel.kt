@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.umut.domain.util.moveSubscribeToBackground
 import com.umut.themovieapp.common.model.DataResource
 import com.umut.themovieapp.common.model.Resource
-import com.umut.themoviedbapp.model.TvShow
+import com.umut.themoviedbapp.tv_shows_ui.entity.SimpleTvShow
 import com.umut.themoviedbapp.ui.extensions.getError
 import com.umut.tv_shows_domain.GetPopularTvShowsUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -21,9 +21,9 @@ constructor(
     private val context: Context
 ) : ViewModel() {
 
-    val popularTvShowsLiveData = MediatorLiveData<Resource<List<TvShow>>>()
+    val popularTvShowsLiveData = MediatorLiveData<Resource<List<SimpleTvShow>>>()
 
-    private val popularTvShows = ArrayList<TvShow>()
+    private val popularTvShows = ArrayList<SimpleTvShow>()
     private var currentPage = 1
 
     init {
@@ -46,7 +46,14 @@ constructor(
                         value = DataResource.error(null, t.getError(context))
                     },
                     onNext = { tvShowsPagedData ->
-                        popularTvShows.addAll(tvShowsPagedData.results ?: Collections.emptyList())
+                        popularTvShows.addAll(tvShowsPagedData.results?.map { tvShow ->
+                            SimpleTvShow(
+                                tvShow.id,
+                                tvShow.originalName ?: "",
+                                tvShow.voteAverage ?: 0.0F,
+                                tvShow.posterPath
+                            )
+                        } ?: Collections.emptyList())
                         value = DataResource.success(popularTvShows)
                     }
                 )

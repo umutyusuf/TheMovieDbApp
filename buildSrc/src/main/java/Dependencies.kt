@@ -4,7 +4,8 @@ object CommonLibraries {
 }
 
 object Support {
-    const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.Support.APP_COMPAT}"
+    const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.Support.ANDROID_X}"
+    const val RECYCLER_VIEW = "androidx.recyclerview:recyclerview:${Versions.Support.ANDROID_X}"
     const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:${Versions.Support.LIFECYCLE_EXTENSIONS}"
 }
 
@@ -39,3 +40,6 @@ object Rx {
     const val RX_ANDROID = "io.reactivex.rxjava2:rxandroid:${Versions.Rx.RX_ANDROID}"
 }
 
+object UI {
+    const val PICASSO = "com.squareup.picasso:picasso:${Versions.UI.PICASSO}"
+}

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">ui</string>
+
+    <string name="error_dialog_title">Error</string>
     <string name="error_general">General Error</string>
     <string name="internal_error">Internal error</string>
+
+    <string name="ok">OK</string>
 </resources>

@@ -13,4 +13,5 @@ dependencies {
     api(project(Modules.CORE_UI))
     api(project(Modules.TV_SHOWS_DOMAIN))
 
+    implementation(UI.PICASSO)
 }
