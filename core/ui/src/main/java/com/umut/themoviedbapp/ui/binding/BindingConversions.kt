@@ -11,7 +11,4 @@ object BindingConversions {
     fun <T> bindBeanToProgress(bean: Resource<T>?): Int =
         if (bean?.getState() == ResourceState.FETCHING) View.VISIBLE else View.GONE
 
-    @JvmStatic
-    @BindingConversion
-    fun bindBooleanToVisibility(isVisible: Boolean): Int = if (isVisible) View.VISIBLE else View.GONE
 }

@@ -9,10 +9,6 @@ data class SimpleTvShow(
     val posterPath: String?
 ) : ListItem<SimpleTvShow>() {
 
-    companion object {
-        const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500/"
-    }
-
     override fun isSame(other: SimpleTvShow) = this.id == other.id
 
 }

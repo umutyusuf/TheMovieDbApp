@@ -32,15 +32,10 @@ abstract class BaseActivity(private val layoutId: Int? = null) : AppCompatActivi
 
     open fun showBack() = false
 
-    fun setScreenTitle(title: CharSequence?) {
+    private fun setScreenTitle(title: CharSequence?) {
         title?.let { t ->
             supportActionBar?.title = t
         }
-    }
-
-    // FIXME: remove unused methods
-    fun setScreenTitle(@StringRes titleRes: Int) {
-        setScreenTitle(getString(titleRes))
     }
 
     fun setScreenSubTitle(@StringRes subTitleRes: Int) {

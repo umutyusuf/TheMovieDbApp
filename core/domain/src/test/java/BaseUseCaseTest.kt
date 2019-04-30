@@ -1,10 +1,10 @@
-
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.reflect.TypeToken
 import com.umut.data.model.PagedData
 import com.umut.data.model.PagedResponse
 import com.umut.domain.BaseUseCase
+import com.umut.domain.message.MessageProvider
 import com.umut.themovieapp.common.error.CommonErrorFactory
 import com.umut.themovieapp.common.error.CoreAppException
 import org.junit.Assert.assertNotNull
@@ -80,15 +80,20 @@ class BaseUseCaseTest {
     @Before
     fun setup() {
         // simple usecase with common error factory
-        sampleUseCase = BaseUseCase(CommonErrorFactory())
+        sampleUseCase = BaseUseCase(CommonErrorFactory(), object : MessageProvider {
+            override fun getMessageForCode(code: Int) = ""
+
+            override fun provideDefaultMessage() = ""
+
+        })
     }
 
     //endregion
 
     @Test
     fun testProcessResponseSuccess() {
-        val response : PagedData<JsonElement> = sampleUseCase.processData(successApiResponse)
-        assertNotNull("Parsed response should not be null",response)
+        val response: PagedData<JsonElement> = sampleUseCase.processData(successApiResponse)
+        assertNotNull("Parsed response should not be null", response)
     }
 
     @Test(expected = CoreAppException::class)

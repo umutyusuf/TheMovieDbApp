@@ -1,10 +1,12 @@
 package com.umut.themoviedbapp.tv_shows_ui
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.filters.SmallTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
@@ -26,7 +28,7 @@ class PopularTvShowsSampleTest {
     @get:Rule
     val singleFragmentActivityRule = ActivityTestRule(SingleFragmentActivity::class.java)
 
-    lateinit var popularTvShowsViewModel: PopularTvShowsViewModel
+    private lateinit var popularTvShowsViewModel: PopularTvShowsViewModel
 
     lateinit var vmFactory: ViewModelProvider.Factory
 
@@ -38,7 +40,7 @@ class PopularTvShowsSampleTest {
 
         vmFactory = mock(ViewModelProvider.Factory::class.java)
         val mockedUseCase = mock(GetPopularTvShowsUseCase::class.java)
-        popularTvShowsViewModel = PopularTvShowsViewModel(mockedUseCase)
+        popularTvShowsViewModel = PopularTvShowsViewModel(mockedUseCase, mock(Context::class.java))
         `when`(vmFactory.create<ViewModel>(any())).thenReturn(popularTvShowsViewModel)
 
         popularTvShowsFragment.vmFactory = vmFactory
@@ -47,7 +49,8 @@ class PopularTvShowsSampleTest {
 
     @Test
     fun testPopularTvShows() {
-        onView(ViewMatchers.withId(R.id.helloWorldTextView)).check(ViewAssertions.matches(ViewMatchers.withText("Hello World")))
+        // simple assertion
+        onView(ViewMatchers.withId(R.id.popularTvShowsRecyclerView)).check(matches(isDisplayed()))
     }
 
 }

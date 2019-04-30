@@ -2,12 +2,12 @@ package com.umut.tv_shows_domain
 
 import com.umut.data.model.PagedData
 import com.umut.data.model.PagedResponse
+import com.umut.domain.message.MessageProvider
 import com.umut.themovieapp.common.error.CommonErrorFactory
 import com.umut.themovieapp.common.error.CoreAppException
 import com.umut.themoviedbapp.datasource.TvShowsDataSource
 import com.umut.themoviedbapp.model.TvShow
-import com.umut.tv_shows_domain.message.MessageCode
-import com.umut.tv_shows_domain.message.MessageProvider
+
 import io.reactivex.Single
 import io.reactivex.observers.TestObserver
 import org.junit.Before
@@ -25,7 +25,10 @@ class PopularTvShowsUseCaseTest {
         mockedDataSource = mock(TvShowsDataSource::class.java)
 
         val sampleMessageProvider = object : MessageProvider {
-            override fun getMessageForCode(code: MessageCode) = "DEFAULT_MESSAGE"
+            override fun provideDefaultMessage() = ""
+
+            override fun getMessageForCode(code: Int) = ""
+
 
         }
         popularTvShowsUseCase =

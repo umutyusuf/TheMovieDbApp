@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ui</string>
-    <string name="hello_world">Hello World</string>
     <string name="tv_shows_module_default_message">Error on operation: tv shows</string>
     <string name="all_shows_loaded">All shows loaded</string>
 

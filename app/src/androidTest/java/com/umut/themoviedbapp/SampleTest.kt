@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 class SampleTest {
 
     @get:Rule
-    val sampleActivityRule = ActivityTestRule(SampleTestActivity::class.java)
+    val sampleActivityRule = ActivityTestRule(PopularTvShowsActivity::class.java)
 
     @Test
     fun testSampleActivity() {

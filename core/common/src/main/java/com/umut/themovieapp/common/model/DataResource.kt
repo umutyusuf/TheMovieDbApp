@@ -1,6 +1,6 @@
 package com.umut.themovieapp.common.model
 
-import com.umut.themovieapp.common.error.Error;
+import com.umut.themovieapp.common.error.Error
 
 class DataResource<T> private constructor(private val dataState: ResourceState,
                                           private val beanData: T?,
